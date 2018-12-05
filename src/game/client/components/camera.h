@@ -33,6 +33,10 @@ public:
 	float GetZoom() const { return m_Zoom; };
 
 	static void ConSetPosition(IConsole::IResult *pResult, void *pUserData);
+	static void ConKeyZoomIn(IConsole::IResult *pResult, void *pUserData);
+  static void ConKeyZoomOut(IConsole::IResult *pResult, void *pUserData);
+  static void ConZoom(IConsole::IResult *pResult, void *pUserData);
+  static void ConZoomReset(IConsole::IResult *pResult, void *pUserData);
 
 	virtual void OnConsoleInit();
 	virtual void OnStateChange(int NewState, int OldState);
@@ -49,6 +53,7 @@ private:
 	vec2 m_MenuCenter;
 	vec2 m_RotationCenter;
 	float m_Zoom;
+	bool m_ZoomBind;
 	int m_CamType;
 	vec2 m_PrevCenter;
 	vec2 m_Positions[NUM_POS];
